@@ -1,31 +1,29 @@
 import React from "react";
 import { useState, useEffect } from "react";
 // import {users} from "../index"
-// var users =[
-//   {
-//   name: "John Doe",
-//   email: "john.doe@example.com",
-//   address: "123 Main St, Anytown USA",
-//   cin:"07491634",
-//   phone: "555-555-1234",
-//   photo: "/images/profil1.jpg",
-// },
-// ];
+var users =[
+  {
+  name: "John Doe",
+  email: "john.doe@example.com",
+  address: "123 Main St, Anytown USA",
+  cin:"07491634",
+  phone: "555-555-1234",
+  photo: "/images/profil1.jpg",
+},
+];
 
 function Profil() {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch("http://localhost:2000/users");
-      const jsonResult = await result.json();
-      setUsers(jsonResult);
-    };
-    fetchData();
-  }, []);
+  // const [users, setUsers] = useState([]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await fetch("http://localhost:3000/users");
+  //     const jsonResult = await result.json();
+  //     setUsers(jsonResult);
+  //   };
+  //   fetchData();
+  // }, []);
 
-  return users ? (
-    <div>Loading...</div>
-  ) : (
+  return (
     <div
       style={{
         display: "flex",
@@ -46,7 +44,7 @@ function Profil() {
         }}
       >
         <img
-          src={users[0]?.photo}
+          src={users[0].photo}
           alt="Profile"
           style={{ width: "92%", height: "92%" }}
         />
